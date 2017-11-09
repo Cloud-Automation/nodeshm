@@ -23,7 +23,7 @@ void unlink(const v8::FunctionCallbackInfo<v8::Value>& args)
 
     v8::String::Utf8Value str(args[0]->ToString());
 
-    char* name = (char*)calloc(1, str.length());
+    char* name = (char*)calloc(1, str.length() + 1);
 
     strcpy(name, (char*)*str);
 
